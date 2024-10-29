@@ -16,27 +16,27 @@ The goal of this project is to ensure data consistency for robots across two rep
 
 - **Python**: Version 3.10+
 - **Selenium**: For web automation
-- **ChromeDriver**: Ensure it matches your Chrome version
+- **Google Chrome/Firefox**
+- **ChromeDriver/GeckoDriver for Firefox**: Ensure it matches your browser version
 - **Pytest**
 
 ## Setup and Installation
-
 1. Clone the repository:
    ```bash
    git clone https://github.com/SlafkoS/8-Automation-Assignment
-2. Install requierements:
+2. Change into the project directory:
+   ```bash
+   cd 8-Automation-Assignment
+3. Install requirements:
    ```bash
    pip install -r requirements.txt
 ## Running the Tests
-1. Change into the project directory:
-   ```bash
-   cd 8-Automation-Assignment
-2. Run the server : python -m http.server 3000
+1. Run the server : python -m http.server 3000
    ```bash
    python -m http.server 3000
-3. Run the test:
+2. Open second terminal and run the test:
    ```bash
-   pytest .\tests\robot_consistency_tests.py
+   pytest tests\robot_consistency_tests.py
 ## Test Description
 The tests include consistency checks for each robot:
 
@@ -46,4 +46,4 @@ Test Cases:
 - test_robot3_consistency: Verifies that Robot 3’s position in the table matches its position on the map.
 
 ## Fixtures
-- driver(): A fixture to initialize and close the ChromeDriver for each test.
+- driver(): A fixture to initialize and close the ChromeDriver or Firefox driver for each test.
