@@ -41,5 +41,5 @@ Test Cases:
 - test_robot2_consistency: Verifies that Robot 2’s position in the table matches its position on the map.
 - test_robot3_consistency: Verifies that Robot 3’s position in the table matches its position on the map.
 
-Fixtures
-driver(): A fixture to initialize and close the ChromeDriver for each test.
+## Fixtures
+- driver(): A fixture to initialize and close the ChromeDriver for each test.
