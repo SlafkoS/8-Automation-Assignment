@@ -17,12 +17,16 @@ The goal of this project is to ensure data consistency for robots across two rep
 - **Python**: Version 3.10+
 - **Selenium**: For web automation
 - **ChromeDriver**: Ensure it matches your Chrome version
+- **Pytest**
 
 ## Setup and Installation
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/SlafkoS/8-Automation-Assignment
+2. Install requierements:
+   ```bash
+   pip install -r requirements.txt
 ## Running the Tests
 1. Change into the project directory:
    ```bash
