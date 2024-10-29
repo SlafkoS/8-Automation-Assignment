@@ -1,7 +1,10 @@
-## Overview
+# 8-Automation-Assignment
 
-This project automates the process of checking data consistency between a table view and a map view of robots using Selenium. The script retrieves the position data (x and y coordinates) of robots displayed in both views and compares them to ensure consistency. The project includes unit tests written with Pytest.
+## Project Overview
 
+The goal of this project is to ensure data consistency for robots across two representations:
+1. **Table View**: A tabular format displaying each robot's attributes, including `x` and `y` coordinates.
+2. **Map View**: A visual representation of robots positioned using CSS grid styling based on their coordinates.
 ## Features
 
 - Retrieves robot data from both a table and a map view.
@@ -11,17 +14,32 @@ This project automates the process of checking data consistency between a table 
 
 ## Requirements
 
-- Python 3.6 or higher
-- Google Chrome (or another browser of your choice)
-- [ChromeDriver](https://sites.google.com/chromium.org/driver/) (make sure the version matches your Chrome version)
-- Selenium package
-- Pytest framework
+- **Python**: Version 3.10+
+- **Selenium**: For web automation
+- **ChromeDriver**: Ensure it matches your Chrome version
 
-## Installation
+## Setup and Installation
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/SlafkoS/8-Automation-Assignment
-   cd DataConsistencyCheck
+## Running the Tests
+1. Change into the project directory:
+   ```bash
+   cd 8-Automation-Assignment
+2. Run the server : python -m http.server 3000
+   ```bash
+   python -m http.server 3000
+3. Run the test:
+   ```bash
+   pytest .\tests\robot_consistency_tests.py
+## Test Description
+The tests include consistency checks for each robot:
 
-   run the server : python -m http.server 3000
+Test Cases:
+- test_robot1_consistency: Verifies that Robot 1’s position in the table matches its position on the map.
+- test_robot2_consistency: Verifies that Robot 2’s position in the table matches its position on the map.
+- test_robot3_consistency: Verifies that Robot 3’s position in the table matches its position on the map.
+
+Fixtures
+driver(): A fixture to initialize and close the ChromeDriver for each test.
