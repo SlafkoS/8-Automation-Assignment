@@ -17,7 +17,7 @@ The goal of this project is to ensure data consistency for robots across two rep
 - **Python**: Version 3.10+
 - **Selenium**: For web automation
 - **Google Chrome/Firefox**
-- **ChromeDriver/GeckoDriver for Firefox**: Ensure it matches your browser version
+- **ChromeDriver/GeckoDriver for Firefox**: Ensure it matches your browser version. Link for chrome driver: https://sites.google.com/chromium.org/driver/getting-started
 - **Pytest**
 
 ## Setup and Installation
@@ -44,6 +44,11 @@ Test Cases:
 - test_robot1_consistency: Verifies that Robot 1’s position in the table matches its position on the map.
 - test_robot2_consistency: Verifies that Robot 2’s position in the table matches its position on the map.
 - test_robot3_consistency: Verifies that Robot 3’s position in the table matches its position on the map.
+
+## Approach
+I decided to compare data in the map and the table view. The test cases check each robot’s location in the table and map views. If any robot’s location does not match, the test logs an inconsistency error, helping identify mismatches between the views.
+
+I also decide to separate methods and tests for modular design. All data-retrieving methods are in `data_retrieve.py`, while test cases reside in `robot_consistency_tests.py`.
 
 ## Fixtures
 - driver(): A fixture to initialize and close the ChromeDriver or Firefox driver for each test.
