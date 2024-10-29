@@ -1,11 +1,9 @@
 from selenium import webdriver
 import pytest
-import chromedriver_autoinstaller
 from src.data_retrieve import retrieve_map_data, retrieve_table_data
 
 @pytest.fixture
 def driver():
-    chromedriver_autoinstaller.install()
     driver = webdriver.Chrome()
     driver.get("http://localhost:3000")
     yield driver
