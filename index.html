@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Warehouse Map</title>
+</head>
+<body>
+    <div class="container">
+        <div class="warehouse">
+            <div class="grid">
+                <div class="cell aisle" style="grid-column: 1; grid-row: 1;"></div>
+                <div class="cell aisle" style="grid-column: 2; grid-row: 1;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 1;"></div>
+                <div class="cell aisle" style="grid-column: 4; grid-row: 1;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 1;"></div>
+                <div class="cell aisle" style="grid-column: 6; grid-row: 1;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 1;"></div>
+                <div class="numbers"> 1 </div>
+
+                <div class="cell aisle" style="grid-column: 1; grid-row: 2;"></div>
+                <div class="cell rack" style="grid-column: 2; grid-row: 2;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 2;"></div>
+                <div class="cell rack" style="grid-column: 4; grid-row: 2;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 2;"></div>
+                <div class="cell rack" style="grid-column: 6; grid-row: 2;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 2;"></div>
+                <div class="numbers"> 2 </div>
+                
+                <div class="cell aisle" style="grid-column: 1; grid-row: 3;"></div>
+                <div class="cell rack" style="grid-column: 2; grid-row: 3;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 3;"></div>
+                <div class="cell rack" style="grid-column: 4; grid-row: 3;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 3;"></div>
+                <div class="cell rack" style="grid-column: 6; grid-row: 3;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 3;"></div>
+                <div class="numbers"> 3 </div>
+
+                <div class="cell aisle" style="grid-column: 1; grid-row: 4;"></div>
+                <div class="cell rack" style="grid-column: 2; grid-row: 4;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 4;"></div>
+                <div class="cell rack" style="grid-column: 4; grid-row: 4;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 4;"></div>
+                <div class="cell rack" style="grid-column: 6; grid-row: 4;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 4;"></div>
+                <div class="numbers">4</div>
+
+                <div class="cell aisle" style="grid-column: 1; grid-row: 5;"></div>
+                <div class="cell rack" style="grid-column: 2; grid-row: 5;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 5;"></div>
+                <div class="cell rack" style="grid-column: 4; grid-row: 5;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 5;"></div>
+                <div class="cell rack" style="grid-column: 6; grid-row: 5;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 5;"></div>
+                <div class="numbers">5</div>
+
+                <div class="cell aisle" style="grid-column: 1; grid-row: 6;"></div>
+                <div class="cell rack" style="grid-column: 2; grid-row: 6;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 6;"></div>
+                <div class="cell rack" style="grid-column: 4; grid-row: 6;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 6;"></div>
+                <div class="cell rack" style="grid-column: 6; grid-row: 6;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 6;"></div>
+                <div class="numbers">6</div>
+
+                <div class="cell aisle" style="grid-column: 1; grid-row: 7;"></div>
+                <div class="cell aisle" style="grid-column: 2; grid-row: 7;"></div>
+                <div class="cell aisle" style="grid-column: 3; grid-row: 7;"></div>
+                <div class="cell aisle" style="grid-column: 4; grid-row: 7;"></div>
+                <div class="cell aisle" style="grid-column: 5; grid-row: 7;"></div>
+                <div class="cell aisle" style="grid-column: 6; grid-row: 7;"></div>
+                <div class="cell aisle" style="grid-column: 7; grid-row: 7;"></div>
+                <div class="numbers">7</div>
+
+                <div class="numbers" style="grid-column: 1; grid-row: 8;"> 1 </div>
+                <div class="numbers">2</div>
+                <div class="numbers">3</div>
+                <div class="numbers">4</div>
+                <div class="numbers">5</div>
+                <div class="numbers">6</div>
+                <div class="numbers">7</div>
+
+                <div class="robot1" style="grid-column: 1; grid-row: 2;"></div>
+                <div class="robot2" style="grid-column: 5; grid-row: 1;"></div>
+                <div class="robot3" style="grid-column: 5; grid-row: 6;"></div>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>Robot Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>X Position</th>
+                        <th>Y Position</th>
+                        <th>Battery %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="background-color: red;">Robot 1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(68, 0, 255);">Robot 2</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(0, 255, 34);">Robot 3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>90%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="legend">
+        <h3>Map Legend</h3>
+        <p><span class="road-legend"></span> Aisle</p>
+        <p><span class="shelf-legend"></span> Rack</p>
+    </div>
+</body>
+</html>
