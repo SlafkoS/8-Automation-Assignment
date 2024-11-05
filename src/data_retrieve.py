@@ -1,3 +1,4 @@
+import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -50,8 +51,20 @@ def retrieve_map_data(driver):
         dict: A dictionary with robot names as keys and their grid positions as values.
     """
     robot_map_data = {}
-    robots = driver.find_elements(By.CSS_SELECTOR, ".robot1, .robot2, .robot3")
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".robot1, .robot2, .robot3"))
+        )
+    except Exception as e:
+        logging.error("Robot elements not found within the time limit.")
+        return robot_map_data
     
+    robots = driver.find_elements(By.CSS_SELECTOR, ".robot1, .robot2, .robot3")
+    # Check if robots were found
+    if not robots:
+        logging.warning("No robots found on the page with the given selectors.")
+        return robot_map_data
+
     # Mapping of class names to robot names
     robot_names = {
         'robot1': 'Robot 1',
@@ -74,10 +87,13 @@ def retrieve_map_data(driver):
         style = robot.get_attribute("style")
 
         try:
-            grid_position = style.split(";")[0].strip().split(": ")[1]
-            y_position, x_position = map(int, grid_position.split(" / "))
+            match = re.search(r'grid-area:\s*(\d+)\s*/\s*(\d+);', style)
+            if match:
+                y_position = int(match.group(1))  # The first group corresponds to Y position
+                x_position = int(match.group(2))  # The second group corresponds to X position
+        
             robot_map_data[name] = {"x": x_position, "y": y_position}
-
+            #logging.debug(f"Extracted positions for {name}: X={x_position}, Y={y_position}")
         except (IndexError, ValueError) as e:
             logging.error(f"Error extracting position for {name}: {e}")
 
